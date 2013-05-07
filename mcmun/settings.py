@@ -55,7 +55,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = '/home/waldo/Projects/mcmun-2013/uploads/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -66,7 +66,7 @@ MEDIA_URL = '/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = '/home/waldo/Projects/mcmun-2013/mcmun/static/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -88,7 +88,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '$2%t5ju5_!e@l1jv#!5@21-#bf6p0k6naj%zm(ghhh2_hs!p_('
+SECRET_KEY = '$2%t5ju5_!e@l1jv#!5@21-#bf6p0k6naj%zm(gghh2_hs!q_('
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -134,6 +134,7 @@ INSTALLED_APPS = (
     'djcelery',
     'djcelery.transport',
     'staffapps',
+    'search',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -174,12 +175,12 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'it@mcmun.org'
-EMAIL_HOST_PASSWORD = 'EDIT THIS!'
+EMAIL_HOST_PASSWORD = '7waldo1945!'
 
 IT_EMAIL = 'it@mcmun.org'
 CHARGE_EMAIL = 'charge@mcmun.org'
 
-ADMIN_URL = 'EDIT THIS!'
+ADMIN_URL = 'http://www.mcmun.org/loladmin/'
 
 ADMINS = (
     ('IT', 'it@mcmun.org'),
@@ -198,3 +199,9 @@ CELERY_RESULT_DBURI = "sqlite:///db.sqlite"
 LOGIN_URL = '/login'
 LOGOUT_URL = '/logout'
 LOGIN_REDIRECT_URL = '/dashboard'
+
+SEARCH_MODELS = (
+    ('cms.Page', ['long_name', 'content']),
+    ('committees.Committee', ['name', 'description']),
+    ('mcmun.SecretariatMember', ['name', 'position', 'bio']),
+)
