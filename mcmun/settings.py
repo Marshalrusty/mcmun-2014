@@ -202,6 +202,6 @@ LOGIN_REDIRECT_URL = '/dashboard'
 
 SEARCH_MODELS = (
     ('cms.Page', ['long_name', 'content']),
-    ('committees.Committee', ['name', 'description']),
+    #('committees.Committee', ['name', 'description']),
     ('mcmun.SecretariatMember', ['name', 'position', 'bio']),
 )
